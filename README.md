@@ -4,7 +4,7 @@
 
 ## Description
 
-**Write full paths in Faxe/data/link/link.sh**
+Write full paths in **Faxe/data/link/link.sh**
 
 **Example:**
 
