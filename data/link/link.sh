@@ -2,4 +2,4 @@
 #KellyShyno
 
 #default
-echo "fullPath";
+echo "testPath";
