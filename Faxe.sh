@@ -3,12 +3,7 @@
 #Faxe
 #version: 1.0.0
 
-
-changeMod()
-{
 chmod -R a+rx *;
-}
-changeMod;
 
 
 
