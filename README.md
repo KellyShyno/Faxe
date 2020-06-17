@@ -2,6 +2,20 @@
 
 > **Faxe - is the program to delete hidden data from a smartphone**
 
+## Necessary
+
+**Need:**
+
+> root
+
+**or**
+
+> **access to storage**
+
+**Use** 'Settings>Apps>Termux>Permissions>Storage' and set to **true**
+
+***but better to have a root..***
+
 ## Description
 
 Write full paths in **Faxe/data/link/link.sh**
