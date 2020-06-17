@@ -2,10 +2,12 @@
 
 > **Faxe - is the program to delete hidden data from a smartphone**
 
-##Description
+## Description
 
 **Write full paths in Faxe/data/link/link.sh**
+
 **Example:**
+
 `echo "/storage/emulated/0/testDir"`
 
 ## Installing
