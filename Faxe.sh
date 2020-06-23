@@ -1,7 +1,7 @@
 #!/bin/bash
 #KellyShyno
 #Faxe
-#version: 1.0.0
+#version: 1.1.0
 
 chmod -R a+rx *;
 
@@ -17,7 +17,7 @@ echo -e '\e[1;31m| |_ / _` \ \/ / _ \ \e[0m';
 echo -e '\e[1;31m|  _| (_| |>  <  __/\e[0m';
 echo -e '\e[1;37m|_|  \__,_/_/\_\___|\e[0m';
 echo "";
-echo -e "\e[1;31mversion: 1.0.0\e[0m";
+echo -e "\e[1;31mversion: 1.1.0\e[0m";
 echo "";
 }
 
@@ -45,18 +45,13 @@ echo -en "\e[1;37m)\e[0m" "\e[1;31m> \e[0m";
 log()
 {
 #don't echo something
-logArray=( $(ls) );
-cd $OLDPWD;
+logArray=( $(ls "$link") );
 echo "" >> data/log/log.md;
 echo "" >> data/log/log.md;
 echo "" >> data/log/log.md;
-cd $OLDPWD;
-
-  for log in ${logArray[@]}
+  for log in "${logArray[@]}"
     do
-cd $OLDPWD;
 echo "$link/$log" >> data/log/log.md;
-cd $OLDPWD;
     done;
 }
 
@@ -79,18 +74,40 @@ shyno;
 
 
 
-rootDelete()
+signCheckWithoutRoot()
 {
-cd $link;
+if [[ "${link:${#link}-1}" == "/" ]]; then
+rm -rf "$link"*;
+  else
+rm -rf "$link"/*;
+  fi;
+}
+
+
+
+signCheckRoot()
+{
+  if [[ "${link:${#link}-1}" == "/" ]]; then
+"$root" rm -rf "$link"*;
+  else
+"$root" rm -rf "$link"/*;
+  fi;
+}
+
+
+
+rootWithoutDelete()
+{
 log;
   if [[ -f /data/data/com.termux/files/usr/bin/tsudo ]]; then
-tsudo rm -rf *;
+root="tsudo"
+signCheckRoot;
   elif [[ -f /data/data/com.termux/files/usr/bin/sudo ]]; then
-sudo rm -rf *;
+root="sudo"
+signCheckRoot;
   else
-rm -rf *;
+signCheckWithoutRoot;
   fi;
-cd $OLDPWD;
 logAmount;
 sleep 1;
 }
@@ -99,14 +116,14 @@ sleep 1;
 
 delete()
 {
-linkArray=( $(./data/link/link.sh) );
-  for link in ${linkArray[@]}
+source ./data/link/link.sh;
+  for link in "${linkArray[@]}";
 do
-    if [[ -d $link ]]; then
+    if [[ -d "$link" ]]; then
 banner;
 echo -e "\e[1;37mDirectory:\e[0m" "\e[1;31m$link\e[0m";
 sleep 1;
-rootDelete;
+rootWithoutDelete;
     else
 banner;
 echo -e "\e[1;37mDirectory:\e[0m" "\e[1;31m$link\e[0m" "\e[1;37mdoesn't exist\e[0m";
