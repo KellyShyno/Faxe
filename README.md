@@ -1,6 +1,6 @@
 # Faxe
 
-> **Faxe - is the program to delete hidden data from a smartphone**
+> **Faxe - is the program to delete data from a smartphone**
 
 ## Necessary
 
@@ -18,11 +18,25 @@
 
 ## Description
 
-Write full paths in **Faxe/data/link/link.sh**
+Write full paths in array in **Faxe/data/link/link.sh**
 
-**Example:**
+**For example:**
 
-`echo "/storage/emulated/0/testDir"`
+```
+linkArray=("/storage/emulated/0/testDir/"
+"/storage/emulated/0/testDir2/"
+);
+```
+
+**P.s.** Faxe don't work when the directory have a double, triple name and etc.
+
+**For example:**
+
+```
+linkArray=("/storage/emulated/0/test Dir/"
+"/storage/emulated/0/test Dir Second/"
+);
+```
 
 ## Installing
 
