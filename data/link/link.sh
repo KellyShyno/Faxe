@@ -1,5 +1,6 @@
 #!/bin/bash
 #KellyShyno
 
-#default
-echo "testPath";
+linkArray=("/storage/emulated/0/testDir/"
+"/storage/emulated/0/testDir2/"
+);
