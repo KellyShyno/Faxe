@@ -28,7 +28,7 @@ linkArray=("/storage/emulated/0/testDir/"
 );
 ```
 
-**P.s.** Faxe don't work when the directory have a double, triple name and etc.
+**P.s.** Faxe don't work when the directory have a double, triple(etc.) name
 
 **For example:**
 
