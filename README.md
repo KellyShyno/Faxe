@@ -14,7 +14,7 @@
 
 **Use** 'Settings>Apps>Termux>Permissions>Storage' and set to **true**
 
-*but better to have a root..*
+*P.s. but better to have a root..*
 
 ## Description
 
