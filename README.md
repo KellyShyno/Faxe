@@ -1,20 +1,21 @@
 # Faxe
 
-> **Faxe - is the program to delete data from a smartphone**
+> **Faxe - is the program to delete data from your device**
+Faxe work as on termux, as on linux
 
 ## Necessary
 
 **Need:**
 
-> root
+> **root**(linux, also termux)
 
 **or**
 
-> **access to storage**
+> **access to storage**(only for termux)
 
 **Use** 'Settings>Apps>Termux>Permissions>Storage' and set to **true**
 
-*P.s. but better to have a root..*
+*but better to have a root..*
 
 ## Description
 
