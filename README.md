@@ -1,13 +1,14 @@
 # Faxe
 
 > **Faxe - is the program to delete data from your device**
+
 Faxe work as on termux, as on linux
 
 ## Necessary
 
 **Need:**
 
-> **root**(linux, also termux)
+> **root**(for linux, also for termux)
 
 **or**
 
