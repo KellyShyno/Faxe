@@ -1,7 +1,7 @@
 #!/bin/bash
 #KellyShyno
 #Faxe
-#version: 1.1.0
+#version: 1.2.1
 
 chmod -R a+rx *;
 
@@ -17,7 +17,7 @@ echo -e '\e[1;31m| |_ / _` \ \/ / _ \ \e[0m';
 echo -e '\e[1;31m|  _| (_| |>  <  __/\e[0m';
 echo -e '\e[1;37m|_|  \__,_/_/\_\___|\e[0m';
 echo "";
-echo -e "\e[1;31mversion: 1.1.0\e[0m";
+echo -e "\e[1;31mversion: 1.2.1\e[0m";
 echo "";
 }
 
@@ -99,17 +99,26 @@ signCheckRoot()
 rootWithoutDelete()
 {
 log;
-  if [[ -f /data/data/com.termux/files/usr/bin/tsudo ]]; then
+  if [[ -d /data/data/com.termux/files/home ]]; then
+      if [[ -f /data/data/com.termux/files/usr/bin/tsudo ]]; then
 root="tsudo"
 signCheckRoot;
-  elif [[ -f /data/data/com.termux/files/usr/bin/sudo ]]; then
+      elif [[ -f /data/data/com.termux/files/usr/bin/sudo ]]; then
 root="sudo"
 signCheckRoot;
-  else
+      else
 signCheckWithoutRoot;
+      fi;
+  else
+      if [[ -f /bin/sudo ]]; then
+root="sudo";
+signCheckRoot;
+      else
+signCheckWithoutRoot;
+      fi;
   fi;
 logAmount;
-sleep 1;
+sleep 60;
 }
 
 
